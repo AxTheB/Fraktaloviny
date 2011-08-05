@@ -5,7 +5,7 @@ import time
 
 budici_soubor = '/tmp/neco'
 chci_budit = False
-#tohle je v milisekundach, 
+#tohle je v milisekundach,
 budici_interval = 8 * 60 * 1000
 
 
@@ -35,7 +35,7 @@ lupDujHomwIj luteb gharghmey
         self.clock.config(text=newtime)
         self.clock.after(budici_interval, self.tick)
 
-    def __init__(self, root):
+    def __init__(self, root=None):
 
         Tkinter.Frame.__init__(self, root)
 
@@ -50,10 +50,10 @@ lupDujHomwIj luteb gharghmey
         curtime = ''
         self.clock = Tkinter.Label()
         self.clock.pack()
-
+        self.pack()
         self.tick()
 
 if __name__ == '__main__':
-    root = Tkinter.Tk()
-    TkBuditel(root).pack()
-    root.mainloop()
+    myapp = TkBuditel()
+    myapp.master.title("Buditel")
+    myapp.mainloop()
